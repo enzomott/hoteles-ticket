@@ -1,0 +1,9 @@
+[
+  { "iso2": "AR", "nameES": "Argentina" },
+  { "iso2": "BR", "nameES": "Brasil" },
+  { "iso2": "UY", "nameES": "Uruguay" },
+  { "iso2": "CL", "nameES": "Chile" },
+  { "iso2": "PE", "nameES": "Perú" },
+  { "iso2": "MX", "nameES": "México" },
+  { "iso2": "ES", "nameES": "España" }
+]

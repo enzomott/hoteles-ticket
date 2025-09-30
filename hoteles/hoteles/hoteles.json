@@ -1,0 +1,32 @@
+[
+    {
+    "hotel": "Gran Hotel del Sol",
+    "ciudad": "Mar del Plata",
+    "habitaciones": [
+        {
+            "tipo": "Standar",
+            "precio_noche": 5000,
+            "disponibles": 10
+        },
+        {
+            "tipo": "Deluxe",
+            "precio_noche": 8000,
+            "disponibles": 5}
+    ]
+},
+{
+    "hotel": "Hotel Montaña Azul",
+    "ciudad": "Mar del Plata",
+    "habitaciones": [
+        {
+            "tipo": "Cabana",
+            "precio_noche": 7500,
+            "disponibles": 8
+        },
+        {
+            "tipo": "Suite de Montaña",
+            "precio_noche": 15000,
+            "disponibles": 3}
+    ]
+}
+]

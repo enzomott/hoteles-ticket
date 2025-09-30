@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hoteles del Sur</title>
+    <link rel="icon" href="images/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="./styles/style.css">
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1> Reserva ahora - Unas vacaciones inolvidables  </h1>
+            <p>Asegura tu lugar esta temporada de vacaciones</p>
+
+            <div class="countdown">
+                <h3> Tiempo límite para completar la compra</h3>
+                <div class="countdown-timer" id="countdown">10:00</div>
+            </div>
+        </div>
+
+        <div class="form-container">
+            <form id="ticketForm">
+                <!-- Datos del cliente -->
+                <div class="form-section">
+                    <h2> Datos del Cliente</h2>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="fullName">Nombre Completo *</label>
+                            <input type="text" id="fullName" name="fullName" placeholder="Ej: Domingo Faustino Sarmiento"
+                                required>
+                            <div class="error-message" id="fullNameError"></div>
+                            <div class="success-message" id="fullNameSuccess"> Nombre válido</div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Correo Electrónico *</label>
+                            <input type="email" id="email" name="email" placeholder="ejemplo@correo.com" required>
+                            <div class="error-message" id="emailError"></div>
+                            <div class="success-message" id="emailSuccess"> Email válido</div>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="phone">Número de Teléfono *</label>
+                            <input type="tel" id="phone" name="phone" placeholder="1234567890" required>
+                            <div class="error-message" id="phoneError"></div>
+                            <div class="success-message" id="phoneSuccess"> Teléfono válido</div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="birthDate">Fecha de Nacimiento (dd/mm/yyyy)  *</label>
+                            <input type="text" id="birthDate" name="birthDate" placeholder="dd/mm/yyyy" required>
+                            <div class="error-message" id="birthDateError"></div>
+                            <div class="success-message" id="birthDateSuccess"> Fecha válida</div>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="country">País de Residencia *</label>
+                            <select id="country" name="country" required>
+                                <option value="">Selecciona tu país de residencia</option>
+                            </select>
+                            
+                            <div class="error-message" id="countryError"></div>
+                            <div class="success-message" id="countrySuccess"> País seleccionado</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Datos de las habitaciones -->
+                <div class="form-section">
+                    <h2> Datos de los hoteles</h2>
+
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="hotel">Selección del Hotel *</label>
+                            <select id="hotel" name="hotel" required>
+                              <option value="">Selecciona el hotel al que deseas hospedarte</option>
+                            </select>
+                            <div class="error-message" id="eventError"></div>
+                            <div class="success-message" id="eventSuccess"> hotel seleccionado</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="fechaIngreso">Día que ingresa *</label>
+                            <input type="date" id="fechaIngreso" name="fechaIngreso" required>
+                            <div class="error-message" id="fechaIngresoError"></div>
+                            <div class="success-message" id="fechaIngresoSuccess"> Fecha válida</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="fechaSalida">Salida *</label>
+                            <input type="date" id="fechaSalida" name="fechaSalida" required>
+                            <div class="error-message" id="fechaSalidaError"></div>
+                            <div class="success-message" id="fechaSalidaSuccess"> Fecha válida</div>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="hotelDate">Ciudad</label>
+                            <input type="text" id="hotelDate" name="hotelDate"
+                                placeholder="Se completará automáticamente" readonly class="readonly-field">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="hotelLocation">Disponibilidad</label>
+                            <input type="text" id="hotelLocation" name="hotelLocation"
+                                placeholder="Se completará automáticamente" readonly class="readonly-field">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="ticketType">Tipo de habitacion *</label>
+                            <select id="ticketType" name="ticketType" required>
+                                <option value="">Selecciona el tipo de habitacion</option>
+                            </select>
+                            <div class="error-message" id="ticketTypeError"></div>
+                            <div class="success-message" id="ticketTypeSuccess"> Habitacion seleccionada</div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="habitacionQuantity">Cantidad de habitaciones *</label>
+                            <input type="number" id="habitacionQuantity" name="habitacionQuantity" min="1" max="6"
+                                placeholder="Cantidad" required>
+                            <div class="error-message" id="habitacionQuantityError"></div>
+                            <div class="success-message" id="habitacionQuantitySuccess"> Cantidad válida</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Datos de Pago -->
+                <div class="form-section">
+                    <h2> Datos de Pago</h2>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="cardNumber">Número de Tarjeta de Crédito *</label>
+                            <div class="card-input-container">
+                                <input type="text" id="cardNumber" name="cardNumber" placeholder="1234 5678 9012 3456"
+                                    required>
+                                <div class="card-icon" id="cardIcon"></div>
+                            </div>
+                            <div class="error-message" id="cardNumberError"></div>
+                            <div class="success-message" id="cardNumberSuccess"> Tarjeta válida</div>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="expiryDate">Fecha de Vencimiento (MM/AA) *</label>
+                            <input type="text" id="expiryDate" name="expiryDate" placeholder="MM/AA" required>
+                            <div class="error-message" id="expiryDateError"></div>
+                            <div class="success-message" id="expiryDateSuccess"> Fecha válida</div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="cvv">CVV *</label>
+                            <input type="text" id="cvv" name="cvv" placeholder="123" required>
+                            <div class="error-message" id="cvvError"></div>
+                            <div class="success-message" id="cvvSuccess"> CVV válido</div>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="cardName">Nombre en la Tarjeta *</label>
+                            <input type="text" id="cardName" name="cardName" placeholder="Juan Perez Sanchez" required>
+                            <div class="error-message" id="cardNameError"></div>
+                            <div class="success-message" id="cardNameSuccess"> Nombre válido</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Resumen de Compra -->
+                <div class="summary-box" id="summaryBox" style="display: none;">
+                    <h3> Resumen de Compra</h3>
+                    <div class="summary-item">
+                        <span>Hotel:</span>
+                        <span id="summaryHotel">-</span>
+                    </div>
+                    <div class="summary-item">
+                        <span>Ciudad:</span>
+                        <span id="summaryDate">-</span>
+                    </div>
+                    <div class="summary-item">
+                        <span>Fecha de ingreso:</span>
+                        <span id="summaryFechaIngreso">-</span>
+                    </div>
+                    <div class="summary-item">
+                        <span>Fecha de salida:</span>
+                        <span id="summaryFechaSalida">-</span>
+                    </div>
+                    <div class="summary-item">
+                        <span>Disponibilidad:</span>
+                        <span id="summaryLocation">-</span>
+                    </div>
+                    <div class="summary-item">
+                        <span>Tipo de Habitacion elegida:</span>
+                        <span id="summaryTicketType">-</span>
+                    </div>
+                    <div class="summary-item">
+                        <span>Cantidad:</span>
+                        <span id="summaryQuantity">-</span>
+                    </div>
+                    <div class="summary-item">
+                        <span>Precio Unitario:</span>
+                        <span id="summaryUnitPrice">-</span>
+                    </div>
+                    <div class="summary-total">
+                        <div class="summary-item">
+                            <span>Total:</span>
+                            <span id="summaryTotal">$0 ARS</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Botón de Envío -->
+                <div class="submit-container">
+                    <div class="submit-message" id="submitMessage">
+                        Complete todos los campos correctamente para continuar
+                    </div>
+                    <button type="submit" class="submit-btn" id="submitBtn" disabled>
+                        Completar Compra
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+<script src="./js/script.js"></script>
+</body>
+
+</html>
